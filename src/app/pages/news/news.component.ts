@@ -16,7 +16,8 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.newsService.getNewsPromise().then(data => {
-      this.news = data;
+      this.news = data.articles;
+      console.log(data);
     }).catch(err => {
       console.error(err);
     })
