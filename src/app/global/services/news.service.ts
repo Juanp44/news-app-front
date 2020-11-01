@@ -8,7 +8,7 @@ export class NewsService {
 news = [
   {
     title: 'Noticia 1'
-  },
+  }, 
   {
     title: 'Noticla',
   }
@@ -25,8 +25,9 @@ news = [
   //GET para 'Top Headlines'
   getTop():Promise<any>{
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
+    return this.httpClient.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
   }
+
 
   //GET para Noticias
   getNoticias():Promise<any>{
@@ -36,8 +37,10 @@ news = [
 
   //GET para fuentes
   getFuentes():Promise<any>{
+    
+
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
+    return this.httpClient.get('https://newsapi.org/v2/sources?apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
   }
 }
   
