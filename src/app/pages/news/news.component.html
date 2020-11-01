@@ -1,7 +1,6 @@
 <p>News</p>
 <ul>
     <li *ngFor="let item of news">
-        <a href="{{item.id}}"></a>
-        {{item.title}}
+        <a [routerLink]="item.id">{{item.title}}</a>
     </li>
-</ul>
+</ul> 
