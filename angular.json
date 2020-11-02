@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "news-app-front"
+    }
+  },
+  "defaultProject": "news-app-front",
+  "cli": {
+    "analytics": "333ecda1-1b40-45b9-8c7e-c9df70451eed"
+  }
 }
