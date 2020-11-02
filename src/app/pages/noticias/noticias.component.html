@@ -1,4 +1,11 @@
 <p>Noticias: </p>
+
+<!-- Input para hacer la búsqueda -->
+<input type="text" (keyup)="onKey($event)">
+<p>{{buscar}}</p>
+
+
+<!-- Despliegue de noticias -->
 <ul>
     <li *ngFor="let item of noticias">
         <a [routerLink]="item.id">{{item.title}}</a>

@@ -9,6 +9,10 @@ import { NewsService } from 'src/app/global/services/news.service';
 export class TitularesComponent implements OnInit {
 
 titulares = []
+paisTemp = [
+  {name: 'Mx'},
+  {name: 'Us'}
+];
 
   constructor( private newsService:NewsService) { }
 
