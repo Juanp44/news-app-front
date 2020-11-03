@@ -34,6 +34,8 @@ news = [
     console.log("Source", source);
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
     // return this.httpClient.get('http://localhost:3000/api/noticias/'+source+'?search='+search).toPromise();
+    const url = (('http://localhost:3000/api/noticias/'+source+'?search='+search))
+    console.log(url);
     return this.httpClient.get('http://localhost:3000/api/noticias/'+source+'?search='+search).toPromise();
 
   }
