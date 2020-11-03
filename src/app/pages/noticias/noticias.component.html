@@ -2,12 +2,15 @@
 
 <!-- Input para hacer la búsqueda -->
 <form (submit)="doSearch()">
+    <select name="Sources" id="" [(ngModel)]="fuentes">
+        <option name="source" value="{{item.id}}" *ngFor="let item of sources">{{item.name}}</option>
+    </select>
     <input type="text" name="buscar" [(ngModel)]="search" placeholder="Buscar">
-    <button >Buscar</button>
+    <button>Buscar</button>
 </form>
 
 <div class="grid">
-    <div class="sm-50 md-25" *ngFor="let item of noticias">
+    <div class="sm-50 md-25" *ngFor="let item of noticias" name="grid">
         <a href="{{item.url}}">
             <img src="{{item.urlToImage}}" alt="">
             {{item.title}}
