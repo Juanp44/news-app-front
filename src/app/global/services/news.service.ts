@@ -23,11 +23,10 @@ news = [
   }
 
   //GET para 'Top Headlines'
-  getTop():Promise<any>{
+  getTop(country = ''):Promise<any>{
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('http://localhost:3000/api/topheadlines').toPromise();
+    return this.httpClient.get('http://localhost:3000/api/topheadlines/'+country).toPromise();
   }
-
 
   //GET para Noticias
   getNoticias():Promise<any>{

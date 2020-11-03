@@ -9,6 +9,7 @@ import { NewsService } from 'src/app/global/services/news.service';
 export class TitularesComponent implements OnInit {
 
 titulares = []
+country:string = 'mx';
 paisTemp = [
   {name: 'Mx'},
   {name: 'Us'}
@@ -17,11 +18,18 @@ paisTemp = [
   constructor( private newsService:NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getTop().then(data => {
+    this.getTop()
+  }
+
+  getTop(country?){
+    this.newsService.getTop(country).then(data => {
       this.titulares = data;
-      console.log(data);
     }).catch(err => {
       console.error(err);
     })
+  }
+
+  setCountry(){
+    this.getTop(this.country)
   }
 }

@@ -1,7 +1,7 @@
 <p>Titulares: </p>
 
 <!-- <select name="" (change)="onCountryChange($event)" id=""> -->
-<select name="" id="">
+<select name="" id="" [(ngModel)]="country" (change)="setCountry()">
     <option value="">Selecciona una opción</option>
     <option value="mx">MX</option>
     <option value="us">US</option>
