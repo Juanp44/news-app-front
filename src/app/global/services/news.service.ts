@@ -25,22 +25,20 @@ news = [
   //GET para 'Top Headlines'
   getTop():Promise<any>{
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
+    return this.httpClient.get('http://localhost:3000/api/topheadlines').toPromise();
   }
 
 
   //GET para Noticias
   getNoticias():Promise<any>{
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
+    return this.httpClient.get('http://localhost:3000/api/noticias').toPromise();
   }
 
   //GET para fuentes
   getFuentes():Promise<any>{
-    
-
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('https://newsapi.org/v2/sources?apiKey=73ec6161b0124edcaa0fe6eb0041df7a').toPromise();
+    return this.httpClient.get('http://localhost:3000/api/fuentes').toPromise();
   }
 }
   

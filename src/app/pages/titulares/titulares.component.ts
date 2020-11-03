@@ -18,11 +18,10 @@ paisTemp = [
 
   ngOnInit(): void {
     this.newsService.getTop().then(data => {
-      this.titulares = data.articles;
+      this.titulares = data;
       console.log(data);
     }).catch(err => {
       console.error(err);
     })
   }
-
 }

@@ -22,11 +22,10 @@ export class NoticiasComponent implements OnInit {
 
   ngOnInit(): void {
     this.newsService.getNoticias().then(data => {
-      this.noticias = data.articles;
+      this.noticias = data;
       console.log(data);
     }).catch(err => {
       console.error(err);
     })
   }
-
 }
