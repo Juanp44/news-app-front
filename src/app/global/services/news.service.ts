@@ -29,9 +29,9 @@ news = [
   }
 
   //GET para Noticias
-  getNoticias():Promise<any>{
+  getNoticias(search = '', source = ''):Promise<any>{
     // return this.httpClient.get('https://jsonplaceholder.typicode.com/posts').toPromise();
-    return this.httpClient.get('http://localhost:3000/api/noticias').toPromise();
+    return this.httpClient.get('http://localhost:3000/api/noticias/'+source+'?search='+search).toPromise();
   }
 
   //GET para fuentes

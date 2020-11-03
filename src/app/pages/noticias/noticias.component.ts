@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ NewsService } from '../../global/services/news.service' 
+import { NewsService } from '../../global/services/news.service'
 
 @Component({
   selector: 'app-noticias',
@@ -12,20 +12,24 @@ export class NoticiasComponent implements OnInit {
   noticias = []
 
   //Arrgeglo para guardar el input que quiere buscar
-  buscar = '';
+  search: string = '';
 
-  onKey(event: any){
-    this.buscar += event.target.value + ', ';
-  }
 
-  constructor( private newsService:NewsService) {}
+
+  constructor(private newsService: NewsService) { } 
 
   ngOnInit(): void {
-    this.newsService.getNoticias().then(data => {
+
+  }
+
+  ngOnChanges() { }
+
+  doSearch() {
+    this.newsService.getNoticias(this.search).then(data => {
       this.noticias = data;
       console.log(data);
     }).catch(err => {
       console.error(err);
-    })
+    }) 
   }
 }

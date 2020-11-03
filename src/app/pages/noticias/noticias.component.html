@@ -1,16 +1,10 @@
 <p>Noticias: </p>
 
 <!-- Input para hacer la búsqueda -->
-<input type="text" (keyup)="onKey($event)">
-<p>{{buscar}}</p>
-
-
-<!-- Despliegue de noticias -->
-<!-- <ul>
-    <li *ngFor="let item of noticias">
-        <a [routerLink]="item.id">{{item.title}}</a>
-    </li>
-</ul>  -->
+<form (submit)="doSearch()">
+    <input type="text" name="buscar" [(ngModel)]="search" placeholder="Buscar">
+    <button >Buscar</button>
+</form>
 
 <div class="grid">
     <div class="sm-50 md-25" *ngFor="let item of noticias">
